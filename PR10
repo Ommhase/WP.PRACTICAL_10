@@ -1,0 +1,52 @@
+# --- Q1: Basic String Creation and Indexing ---
+s = "PythonProgramming"
+print(f"Q1 -> First: {s[0]}, Last: {s[-1]}, Middle: {s[len(s)//2]}")
+
+# --- Q2: String Slicing Fundamentals ---
+print(f"Q2 -> First 5: {s[:5]}, Last 4: {s[-4:]}, Index 2 to 7: {s[2:7]}")
+
+# --- Q3: Advanced Slicing with Step ---
+print(f"Q3 -> Alternate: {s[::2]}, Reversed: {s[::-1]}")
+
+# --- Q4: String Immutability Demonstration ---
+try:
+    s[0] = "J"
+except TypeError as e:
+    print("Q4 Immutability Error:", e)
+new_s = "J" + s[1:]
+print("Q4 New String Created:", new_s)
+
+# --- Q5: Searching using in and not in ---
+print("Q5 -> Is 'Program' in s?", "Program" in s)
+print("Q5 -> Is 'Java' not in s?", "Java" not in s)
+
+# --- Q6: Using find() and index() ---
+print("Q6 -> find('Pro'):", s.find("Pro"), "| find('Missing'):", s.find("Missing"))
+print("Q6 -> index('Pro'):", s.index("Pro"))
+
+# --- Q7: Counting Occurrences ---
+print("Q7 -> Count of 'm':", s.count("m"))
+
+# --- Q8: String Case Conversion Methods ---
+sample = "welcome to vsit"
+print(f"Q8 -> Upper: {sample.upper()} | Lower: {sample.lower()} | Title: {sample.title()}")
+
+# --- Q9: Removing Spaces and Formatting ---
+raw = "   Hello World   "
+cleaned = raw.strip().replace("World", "Python")
+print(f"Q9 -> Formatted: '{cleaned}'")
+
+# --- Q10: Splitting and Joining Strings ---
+words = sample.split()
+joined = "-".join(words)
+print(f"Q10 -> Split: {words} | Joined: {joined}")
+
+# --- Q11: Palindrome Checker using Slicing ---
+word = "madam"
+print(f"Q11 -> Is '{word}' a palindrome? {word == word[::-1]}")
+
+# --- Q12: Real-World Text Analyzer ---
+para = "python is easy and python is powerful"
+w_list = para.split()
+most_freq = max(set(w_list), key=w_list.count)
+print(f"Q12 Analyzer -> Words: {len(w_list)}, Chars: {len(para)}, Most Frequent Word: '{most_freq}'")
